@@ -1,0 +1,916 @@
+//ALGORITMO SECUENCIALES
+
+//11. Suma de dos números: Escribe un programa 
+//que tome dos números como entrada y muestre su suma.
+//entrada:num1, num2 
+//proceso:suma=num1+num2
+//salida:suma
+Funcion SumaDeDosnumeros()
+	Definir num1, num2, suma Como Real
+	num1=0; num2=0; suma=0
+	Escribir "Ingrese un numero"
+	Leer num1
+	Escribir "Ingrese el segundo numero"
+	Leer num2
+	suma=num1+num2
+	Escribir "La suma de " num1 " + " num2 " =  " suma
+FinFuncion
+
+//12. Área de un triángulo: Pide al usuario que ingrese la base 
+//y la altura de un triángulo, luego calcula y muestra su área.
+Funcion AreaDeUnTriangulo()
+	Definir base, altura, area Como Real
+	Escribir "Ingrese la base "
+	Leer base
+	Escribir "Ingrese altura"
+	Leer altura
+	area=(base*altura)/2
+	Escribir "El area del triangulo es " area
+FinFuncion
+
+//13. Número par o impar: Solicita al usuario que 
+//ingrese un número e indica si es par o impar.
+Funcion NumeroParOimpar()
+	Definir num, rec Como Entero
+	num=0; rec=0
+	Escribir "Ingrese un numero"
+	Leer num
+	rec=num mod 2
+	Si rec=0 Entonces
+		Escribir "El numero " num " es par"
+	SiNo
+		Si rec=1 Entonces
+			Escribir "El numero " num " es impar"
+		FinSi
+	FinSi
+FinFuncion
+
+//14.Calculadora simple: Crea una calculadora que realice operaciones básicas 
+//como suma, resta, multiplicación y división, según la elección del usuario.
+Funcion CalculadoraSimple()
+	Definir num1, num2 Como Entero
+	Definir result como real
+	Escribir "Ingresa el primer numero a calcular"
+	leer num1
+	Escribir "Ingresa el segundo numero a calcular"
+	leer num2
+	Escribir "Elige una opcion de operador +,-,*,/"
+	Leer op
+	Si op="+" Entonces
+		result=num1+num2
+	SiNo
+		Si op="-" Entonces
+			result=num1-num2
+		SiNo
+			Si op="*" Entonces
+				result=num1*num2
+			SiNo
+				Si op="/" Entonces
+					result=num1/num2
+				FinSi
+			finsi	
+		FinSi
+	FinSi
+	Escribir "El resultado de " num1 " " op " " num2 " = " result
+FinFuncion
+
+//15. Tabla de multiplicar: Pide al usuario un número 
+//y muestra su tabla de multiplicar del 1 al 10.
+Funcion TablaDeMultiplicar()
+	Escribir "*** ***"
+	Definir num, i, result Como Entero
+	i=1; num=0
+	Escribir "Ingrese el numero de la tabla"
+	Leer num
+	Mientras i<=10 Hacer
+		result=num * i
+		Escribir num " * " i " = " result
+		i=i+1
+	FinMientras
+FinFuncion
+
+//16. Copiar palabra: Escribe un programa que lea dos 
+//palabras y concatena en otra variable las dos palabras
+Funcion CopiarPalabra()
+	Definir palabra1, palabra2, palabraN Como Caracter
+	palabra1="";palabra2="";palabraN=""
+	Escribir"Ingrese la primera palabra:"
+	Leer palabra1
+	Escribir "Ingrese la segunda palabra:"
+	Leer palabra2
+	palabraN=palabra1+ " " + palabra2
+	Escribir palabraN
+FinFuncion
+
+//ALGORITMO SELECTIVOS (CON CODICIONES)
+
+//17. Mayor de tres números: Solicita tres 
+//números y determina cuál es el mayor de ellos.
+Funcion mayorDeTresNumeros()
+	//Entrada:n1,n2,n3
+	//Proceso:Si n1>n2 y n1>n3: n1 sino si n2>n1 y n2>n3: n2 sino n3
+	//salida:Escribir "el mayor de los tres numeros ingresados es:" n1 o n2 o n3
+	Definir n1,n2,n3 Como Entero
+	n1=0; n2=0; n3=0
+	Escribir "Ingrese el primer numero"
+	Leer n1
+	Escribir "Ingrese el segundo numero"
+	Leer n2
+	Escribir "Ingrese el tercer numero"
+	Leer n3
+	Si n1>n2 y n1>n3 Entonces
+		Escribir "el primer numero es el mayor: " n1
+	SiNo
+		Si n2>n1 y n2>n3 entonces
+			Escribir "el segundo numero es el mayor: " n2 
+		sino  
+			Si n3>n1 y n3>n2
+				Escribir "el tercer numero es el mayor: " n3
+			Sino 
+				Escribir " ninguno es mayor "
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
+//Edad mínima para votar: Pregunta la edad del usuario 
+//y verifica si es elegible para votar (18 años o más).
+Funcion EdadParaVotar()	
+	//Entrada:edad
+	//Proceso:Si edad >= 18: 
+	//Salida:El usuario puede votar 
+	Definir edad Como Entero
+	edad=0
+	Escribir "* EDAD MINIMA PARA VOTAR *"
+	Escribir "INGRESE SU EDAD"
+	Leer edad
+	Si edad >= 18 Entonces
+		Escribir "EL USUARIO PUEDE VOTAR "
+	Sino
+		Escribir "EL USUARIO NO PUEDE VOTAR "
+	FinSi
+FinFuncion
+
+//19. Calculadora de BMI: Crea un programa que calcule el índice de masa corporal (BMI) 
+//a partir del peso y la altura del usuario, y luego indique si está en una categoría de peso saludable.
+Funcion CalculadoraDeIMC()
+	//Entrada: peso, altura
+	//Proceso: IMC=peso/altura
+	//IMC
+	Definir peso, altura, imc Como Real
+	Escribir "Ingrese su peso en kg"
+	Leer peso
+	Escribir "Ingrese la altura en metros"
+	Leer altura
+	imc = peso / redon (altura * altura)
+	Si imc < 18.5 Entonces
+		Escribir "Su IMC es ", imc,  " y está en la categoría de Bajo peso"
+	SiNo
+		Si imc >= 18.5 y imc < 24.9 Entonces
+			Escribir "Su IMC es ", imc, " y está en la categoría de Peso saludable"
+		SiNo
+			Si imc >= 25 y imc < 29.9 Entonces
+				Escribir "Su IMC es ", imc, " y está en la categoría de Sobrepeso"
+			SiNo
+				Escribir "Su IMC es ", imc, " y está en la categoría de Obesidad"
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
+//20. Número positivo, negativo o cero: Pide al usuario que 
+//ingrese un número y muestra si es positivo, negativo o cero.
+Funcion PosiNegatCero()
+	//Entrada: Leer num
+	//Proceso:Si num>0 entonces Escribir "El numero "  num  " es positivo" , 
+    //Sino Si num<0 entonces Escribir "El numero "  num  " es negativo" Sino Escribir "El numero " num es "cero".
+	//Salida:positivo
+	//Escribir "El numero "  num  " es :(positivo/negativo/cero)
+	Escribir "Ingrese un numero"
+	Leer num
+	Si num>0 entonces
+		Escribir "El numero "  num  " es positivo" 
+	Sino 
+		Si num<0 entonces Escribir "El numero "  num  " es negativo" 
+		Sino 
+			Escribir "El numero " num " es cero"
+		FinSi
+	FinSi
+FinFuncion
+
+//21. Año bisiesto: Solicita al usuario un año y determina 
+//si es un año bisiesto o no. Un año bisiesto es divisible 
+//por 4, pero no por 100, a menos que también sea divisible por 400.
+funcion AñoBisiesto()
+	//Entrada: leer año
+	//Proceso: Si año mod 400 // si año mod 4 // si año mod 100 <> 0
+    //Salida: El año es bisiesto
+	Definir año como enteros
+	Escribir "Ingrese el año:"
+    Leer año
+    Si (año mod 400 = 0) O ((año mod 4 = 0) Y (año mod 100 <> 0)) Entonces
+        Escribir "El año ", año, " es un año bisiesto."
+    Sino
+        Escribir "El año ", año, " no es un año bisiesto."
+    FinSi
+Finfuncion
+
+//22. Signo zodiacal: Pide al usuario que ingrese su mes y día de nacimiento,
+//luego determina su signo zodiacal. Puedes usar una serie de declaraciones 
+//if para comparar las fechas ingresadas con las fechas límite de cada signo zodiacal.
+Funcion SignoZodiacal()
+	//Entrada: mes, dia 
+	//Proceso: Si ((mes='marzo') y (dia>=21 y dia<=31)) o ((mes='abril') y (dia>=1 y dia<=19)) 
+	//Salida:"Signo zodiacal
+	Definir dia Como Entero
+	Definir mes Como caracter
+	Escribir "Ingrese mes de nacimiento (ejm: enero)"
+	Leer mes 
+	Escribir "Ingrese dia de nacimiento"
+	Leer dia
+	Si ((mes='marzo') y (dia>=21 y dia<=31)) o ((mes='abril') y (dia>=1 y dia<=19)) Entonces
+		EScribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Aries "
+	SiNo
+		si ((mes='abril') y (dia>=20 y dia<=30)) o ((mes='mayo') y (dia>=1 y dia<=20)) Entonces
+			Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Tauro "
+		SiNo
+			si ((mes='mayo') y (dia>=21 y dia<=31)) o ((mes='junio') y (dia>=1 y dia<=20)) Entonces
+				Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Geminis "
+			SiNo
+				si ((mes='junio') y (dia>=21 y dia<=30)) o ((mes='julio') y (dia>=1 y dia<=22)) Entonces
+					Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Cancer"
+				SiNo
+					si ((mes='julio') y (dia>=23 y dia<=31)) o ((mes='agosto') y (dia>=1 y dia<=22)) Entonces
+						Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Leo "
+					SiNo
+						si ((mes='agosto') y (dia>=23 y dia<=31)) o ((mes='septiembre') y (dia>=1 y dia<=22)) Entonces
+							Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Virgo "
+						SiNo
+							si ((mes='septiembre') y (dia>=23 y dia<=30)) o ((mes='octubre') y (dia>=1 y dia<=22)) Entonces
+								Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es 	Libra "
+							SiNo
+								si ((mes='octubre') y (dia>=23 y dia<=31)) o ((mes='noviembre') y (dia>=1 y dia<=21)) Entonces
+									Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Escorpio"
+								SiNo
+									si ((mes='noviembre') y (dia>=22 y dia<=30)) o ((mes='diciembre') y (dia>=1 y dia<=21)) Entonces
+										Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Sagitario "
+									SiNo
+										si ((mes='diciembre') y (dia>=22 y dia<=31)) o ((mes='enero') y (dia>=1 y dia<=20)) Entonces
+											Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Capricornio "
+										SiNo
+											si ((mes='enero') y (dia>=21 y dia<=30)) o ((mes='febrero') y (dia>=1 y dia<=19)) Entonces
+												Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Acuario"
+											SiNo
+												si ((mes='febrero') y (dia>=20 y dia<=29)) o ((mes='marzo') y (dia>=1 y dia<=20)) Entonces
+													Escribir "El signo correspondiente a tu fecha de nacimiento " dia " de " mes " es Picsis "
+												FinSi
+											FinSi
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
+//23. Día del mes con respecto a la segunda quincena: Solicita al usuario que ingrese 
+//un número de día del mes (por ejemplo, del 1 al 31) y verifica si ese día pertenece 
+//a la primera quincena (días 1-15) o a la segunda quincena (días 16-31).
+Funcion PrimeraOsegundaQuincena
+	//Entrada: dia=0
+	//Proceso:si dia>=1 y dia<=15 :    //  Si dia>15 y dia<31:
+	//Salida:Escribir Primera quincena //  Escribir Segunda quincena         
+	Definir dia Como Entero
+	dia=0
+	Escribir "Ingrese un dia del mes (1-31)"
+	Leer dia
+	Si dia>=1 y dia<=15 Entonces
+		Escribir "El dia " dia " pertenece a la primera quincena del mes"
+	sino 
+		Si dia>15 y dia<31 Entonces
+			Escribir "El dia " dia " pertenece a la segunda quincena del mes"
+		sino 
+			Escribir "No ha ingresado un numero de dia correspondiente al mes"
+		FinSi
+	FinSi	
+FinFuncion
+
+//24. Día de la semana: Pide al usuario que ingrese un número del 1 al 7, 
+//donde 1 representa el domingo, 2 el lunes, 3 el martes, y así sucesivamente. Luego, utiliza una 
+//estructura switch para mostrar el nombre del día de la semana correspondiente al número ingresado.
+Funcion diaSemana()
+//Entrada:numero de dia
+//Proceso:Segun dia Hacer del 1 - 7 
+//Salida: el nombre del dia segun el numero dado
+	Escribir "Ingrese un numero (1-7)"
+	Leer dia
+	Segun dia Hacer
+		1:
+			Escribir "Domingo"
+		2:
+			Escribir "Lunes"
+		3:
+			Escribir "Martes"
+		4:
+			Escribir "Miercoles"
+		5:
+			Escribir "Jueves"
+		6:
+			Escribir "Viernes"
+		7:
+			Escribir "Sabado"
+		De Otro Modo:
+			Escribir "nO HA INGRESADO UN NUMERO QUE CORRESPONDA AL DIA DE LA SEMANA "
+	Fin Segun
+FinFuncion	
+
+	//25. Frases iguales: Escribir un programa que
+	//ingrese dos frases e indique si son iguales
+Funcion FrasesIguales()
+	//Entrada: frase1 , frase2
+	//Proceso: Si frase1=frase2
+	//Salida: Escribir son iguales
+	Definir frase1, frase2 Como Caracter
+	Escribir "Ingrese frase1"
+	Leer frase1
+	Escribir "Ingrese frase2"
+	Leer frase2
+	frases1=minusculas(frase1)
+	frases2=Minusculas(frase2)
+	Si frases1 = frases2 Entonces
+		Escribir "las dos frases son iguales"
+	sino 
+		Escribir "no son iguales"
+	FinSi
+FinFuncion
+
+//26. Calculadora de precio con descuento:Crea un programa que permita 
+//a un usuario ingresar el precio de un artículo y un porcentaje de descuento.
+//El programa debe calcular y mostrar el precio final después del descuento.
+Funcion CalculadoraPrecioConDescuento()
+	//Entrada: precio, pdsct
+	//Proceso: preciodsct=precio*pdsct // precioFinal=precio-pdsct
+	//Salida:precioFinal
+	Definir precio, pdsct, precioFinal como real
+	Escribir "Ingresa el precio del articulo"
+	Leer precio
+	Escribir "Ingresa el porcentaje de descuento (ejm: 0.8)" 
+	Leer pdsct
+	preciodsct=precio*pdsct
+	precioFinal=precio-preciodsct
+	Escribir precioFinal
+FinFuncion
+
+//27. Calculadora de factura con impuestos: Solicita al usuario que ingrese 
+//el total de una factura y el porcentaje de impuestos aplicado. Luego, 
+//calcula y muestra el monto total a pagar, incluyendo los impuestos.
+Funcion CalculadoraFacturaImpuestos()
+	//Entrada:totalFactura, impApli
+	//Proceso:totalPagar=
+	//Salida:totalPagar
+	Definir totalFactura,porImpuestos, montoTotalPagar Como Real
+	Escribir "Ingrese el total de la factura"
+	Leer totalFactura
+	Escribir "Ingrese el porcentaje de impuestos aplicado"
+	Leer porcentajeImpuestos
+	montoTotalPagar = totalFactura + (totalFactura * (porcentajeImpuestos / 100))
+	Escribir "El monto total a pagar, incluyendo los impuestos, es: "  montoTotalPagar
+FinFuncion
+
+//28. Calculadora de sueldo con aumento: Pide al usuario que ingrese su 
+//salario actual y el porcentaje de aumento que recibirá. Calcula y 
+//muestra el nuevo salario después del aumento.
+funcion SueldoAumento()
+	//Entrada:salario=0, aumento=0 
+	//Proceso: salarioAumento=salario*aumento(calcular), newSalario=salario+salarioAumento
+	//Salida:newSalario
+	Definir salario,newsalario, aumento, salarioAumento Como Real
+	salario=0
+	aumento=0
+	Escribir "Ingrese su salario actual"
+	Leer salario
+	Escribir "Ingrese el porcentaje del aumento (ejm:0.05)"
+	Leer aumento
+	salarioAumento=salario*aumento
+	newSalario=salario+salarioAumento
+	Escribir "Su nuevo salario con aumento de " aumento "% es: " newSalario 
+FinFuncion
+
+//29. Calculadora de compra con múltiples artículos: Permite al usuario ingresar
+//el precio y la cantidad de varios artículos que está comprando. Calcula el total
+//de la compra y aplica un descuento del 10% si el total es mayor a cierta cantidad (por ejemplo, $100).
+Funcion multiplesArticulos()
+	//Entrada: precio, cantidad
+	//Proceso:total=precio*cantidad // Si total>100 : desc= total*0.10 // totaldsc=total-desc 
+	//Salida:totalDesc
+	Definir precio Como Real
+	Definir cant como entero
+	Escribir "Ingrese el precio del articulo"
+	Leer precio
+	Escribir "Ingrese cantidad de articulos"
+	Leer cant
+	total=precio*cant
+	Si total>100 Entonces
+		desc= total*0.10 
+		totaldsc=total-desc
+		Escribir "El total de la compra es: " total "$"
+		Escribir "El total de la compra con descuento del 10% es: " totaldsc "$"
+	SiNo
+		Escribir "El total de la compra es: " total "$"
+	FinSi
+FinFuncion
+
+//30. Calculadora de impuestos sobre el salario: Solicita al usuario que ingrese su 
+//salario anual y calcula el impuesto sobre la renta según las siguientes tasas:
+Funcion ImpuestosSalario()
+	//Entrada:salarioAnual,
+	//Proceso:
+	//Salida:
+	Definir salario, imp Como Real
+	Escribir "Ingrese su salario anual"
+	Leer salario
+	Si salario <= 10000 Entonces
+		impuesto = salario * 0.10
+	SiNo
+		Si salario <= 20000 Entonces
+			impuesto = salario * 0.15
+		FinSi
+	FinSi
+	Escribir "El impuesto sobre la renta es: " impuesto
+FinFuncion
+
+//33. Descuento por antigüedad en la empresa: Pregunta al usuario cuántos años
+//ha estado trabajando en una empresa y calcula su bono de antigüedad. Si 
+//ha trabajado más de 5 años, otorga un bono del 5% sobre su salario.
+//Entrada:
+//Proceso:
+//Salida:
+Funcion DsctAntiguedad() 
+	Definir años Como Entero
+	Definir salario, dsct, bono como real
+	Escribir "Ingrese la cantidad de años trabajados en la empresa"
+	Leer años
+	Escribir "Ingrese su salario"
+	Leer salario
+	Si años>5 entonces 
+		dsct=salario*0.05
+		bono=dsct
+	FinSi
+	Escribir "Su bono por antiguedad es de " bono "$"
+FinFuncion
+
+//34. Calculadora de envío con tarifas diferentes: Crea un programa que permita al usuario
+//ingresar la distancia de envío y calcule el costo del envío. Si la distancia es inferior 
+//a 50 km, el costo es de $10. Si la distancia es de 50 km o más, el costo es de $20.
+Funcion envioTarifas()
+	Escribir "Ingrese la distancia de envio"
+	Leer dist
+	Si dist<50 Entonces
+		costo=10
+	SiNo
+		si dist>=50 Entonces
+			costo=20
+		FinSi
+	FinSi
+	Escribir "El costo del envio es de: " costo "$"
+FinFuncion
+
+//35. Calculadora de descuento por lealtad del cliente: Pide al usuario que 
+//ingrese el total de sus compras mensuales durante un año. Si el total es 
+//superior a $500, aplica un descuento del 10% en la próxima compra.
+Funcion dsctLealtadCliente()
+	Escribir "Ingrese el total de sus compras mensuales durante un año" 
+	Leer total
+	Si total>500 Entonces
+		Escribir "Su proxima compra tendra un descuento de 10%"
+		Escribir "Proxima compra"
+		Leer compra
+		dsct=compra-(compra*0.10)
+		Escribir "Su compra con descuento es de: " dsct
+		Escribir "Gracias por su lealtad"
+	SiNo
+		Escribir "El total es inferior a $500"
+	FinSi
+FinFuncion
+
+//36. Calculadora de descuento por volumen de compra: Permite al usuario ingresar 
+//la cantidad de unidades de un producto que va a comprar y el precio 
+//unitario. Aplica descuentos por volumen de compra según las siguientes reglas:
+//10-50 unidades: 5% de descuento
+//51-100 unidades: 10% de descuento
+//Más de 100 unidades: 15% de descuento
+Funcion dsctVolumenCompra()
+	Definir cant Como Entero
+	Definir precioUni como real
+	Escribir "Ingresa la cantidad de unidades del producto"
+	Leer cant
+	Escribir "Ingresa el precio unitario del producto"
+	Leer precioUni
+	total=precioUni*cant
+	Si cant>=10 y cant<=50 Entonces
+		dsct=0.05
+		totaldsct=total-(total*dsct)
+	SiNo
+		si cant>=51 y cant<=100 Entonces
+			dsct=0.10
+			totaldsct=total-(total*dsct)
+		SiNo
+			Si cant>100 Entonces
+				dsct=0.15
+				totaldsct=total-(total*dsct)
+			SiNo
+				Si cant<10 Entonces
+					Escribir "El total de su compra es: " total
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	Escribir "El precio de su compra con descuento de " dsct " por volumen de compra es de: $" totaldsct
+FinFuncion
+
+//40. Calculadora de costo de servicio: Pregunta al usuario cuántas horas de servicio 
+//necesita y calcula el costo total. Si las horas son más de 10, aplica un descuento del 20%.
+funcion CostoServicio() 
+	Definir costoS Como Real
+	Escribir "Ingrese la cantidad de horas de servicio que necesita"
+	Leer horasS
+	Escribir "Ingrese el costo por hora del servicio"
+	Leer costoS
+	total=costoS*horasS
+	Si horasS>10 Entonces
+		dsct=total-(total*0.20)
+		Escribir "El costo por el servicio es de: $" total " con descuento de 0.20 es: " dsct
+	SiNo
+		Escribir "El costo por el servicio es de: $" total
+	FinSi
+FinFuncion
+
+//Ciclos - For y while
+//41. Suma de números pares: Utiliza un bucle for para 
+//calcular la suma de los números pares del 1 al 50.
+Funcion SumaNumerosPares()
+	Definir n, suma Como Entero
+	n=1
+	Para i=n Hasta 50 Con Paso 1 Hacer
+		rec = n mod 2
+		Si rec=0 Entonces
+			Escribir n
+			suma=suma+n
+		FinSi
+		n=n+1
+	Fin Para
+	Escribir "La suma de los números pares del 1 al 50 es: " suma
+FinFuncion
+
+//42. Tabla de multiplicar: Utiliza un bucle for para imprimir la tabla de 
+//multiplicar de un número ingresado por el usuario del 1 al 12
+Funcion tablaMultiplicar() 
+	Definir num, i, multi como entero
+	Escribir "Ingrese el numero"
+	Leer num
+	Escribir "Tabla de multiplicar del " num
+	Para i=1 Hasta 12 Con Paso 1 Hacer
+		multi=num*i
+		Escribir num " * " i "  = " multi
+	Fin Para
+FinFuncion
+
+//43. Contador de vocales: Utiliza un bucle while para contar el
+//número de vocales en una palabra ingresada por el usuario.
+Funcion contadorVocales()
+	Definir palabra, car Como Caracter
+	Definir i como entero
+	Escribir "Ingrese una palabra"
+	Leer palabra
+	long= Longitud(palabra)
+	Para i=0 Hasta long Con Paso 1 Hacer
+		car = Subcadena(palabra, i, i)
+		car=Minusculas(car)
+		Si car="a" o car="e" o car="i" o car="o" o car="u" entonces
+			cont=cont+1
+		FinSi
+	FinPara
+	Escribir "la palabra ingresada tiene " cont " vocales"
+FinFuncion
+
+//44.Contador de digitos: Utiliza un bucle for para contar el 
+//numero de dígitos en una palabra ingresada por el usuario.
+Funcion contadorDigitos()
+	Definir palabra Como Caracter
+	Escribir "Ingrese una palabra"
+	Leer palabra
+	Para i <- 0 Hasta Longitud(palabra) - 1 Con Paso 1 Hacer
+        car= Subcadena(palabra, i, i)
+            cont = cont + 1
+    FinPara
+    Escribir "La palabra tiene ", cont, " dígitos"
+FinFuncion
+
+//45. Adivina el número: Genera un número aleatorio y pide al usuario 
+//que adivine el número. Utiliza un bucle while para repetir la 
+//solicitud hasta que adivine correctamente.
+Funcion adivinaNumero()
+	Definir numAd, intento, n Como entero
+	n=azar(3)
+	Escribir "Adivine el numero"
+	Leer numAd
+	intento=1
+	Mientras numAd<>n Hacer
+		intento=intento+1
+		Escribir "Adivine el numero nuevamente  # " intento
+		Leer numAd
+	FinMientras
+	Si n=numAd Entonces
+		Escribir "Felicidades adivinaste el numero en el intento # " intento 
+	FinSi
+FinFuncion
+
+//46. Contador de Alfabeto: Utiliza un bucle for para contar el número 
+//de letras del alfabeto(a..z) en una palabra ingresada por el usuario.
+Funcion contadorAlfabeto()
+	Definir palabra Como Caracter
+    Definir cont Como Entero
+    cont <- 0
+    Escribir "Ingrese una palabra: "
+    Leer palabra
+    Para i <- 1 Hasta Longitud(palabra) Hacer
+        letra <- Subcadena(palabra, i, i)
+        Si letra >= "a" Y letra <= "z" Entonces
+            cont<- cont + 1
+        FinSi
+    FinPara
+    Escribir "El número de letras del alfabeto en la palabra es: ", cont
+FinFuncion
+
+//47. Suma de números impares: Utiliza un bucle while para 
+//calcular la suma de los números impares del 1 al 100.
+Funcion sumaImpares() 
+	Definir impares Como Entero
+	n=1
+	Mientras n<=100 Hacer
+		rec=n mod 2
+		Si rec=1 Entonces
+			impares=impares+n
+			Escribir n ", " Sin Saltar
+		FinSi
+		n=n+1
+	FinMientras
+	Escribir "La suma de los numeros impares del 1 al 100 es : " impares
+FinFuncion
+
+//48. Contador de caracteres: Escribir un programa que lea una
+//palabra y presenta cuantos caracteres hay en dicha palabra.
+Funcion contadorDeCaracteres()
+    Definir palabra Como Caracter
+    Definir cont Como Entero
+    Escribir "Ingrese una palabra: "
+    Leer palabra
+    cont <- Longitud(palabra)
+    Escribir "La palabra tiene ", cont, " caracteres."
+FinFuncion
+
+//49. Suma de números: Pide al usuario que ingrese números enteros positivos 
+//uno por uno y utiliza un bucle while para calcular la suma de estos números.
+//El ciclo debe terminar cuando el usuario ingrese un número negativo.
+Funcion sumaNumeros()
+	Definir num, suma Como Entero
+	Escribir "Ingrese numeros enteros positivos (termina cuando ingrese un numero negativo)"
+	num=1
+	Mientras num>0 Hacer
+		Leer num 
+		Si num>0 Entonces
+			suma=suma+num	
+		FinSi
+	FinMientras
+	Escribir "La suma de los numeros ingresado: " suma
+FinFuncion
+
+//50.Cuenta regresiva: Pide al usuario que ingrese un número entero positivo y utiliza
+//un bucle while para mostrar una cuenta regresiva desde ese número hasta 1.
+Funcion cuentaRegresiva()
+	Escribir "Ingrese un numero entero positivo"
+	Leer num
+	Mientras num>0 Hacer 
+		num=num-1
+		Si num>0 Entonces
+			Escribir num
+		FinSi
+	FinMientras
+FinFuncion
+
+//Arreglos 
+//51.Suma de elementos: Crea un arreglo de números 
+//enteros y calcula la suma de todos sus elementos.
+Funcion sumaElementos()
+    Definir datos, pos Como Entero
+    Dimension datos[4]
+    datos[0] = 10
+    datos[1] = 20
+    datos[2] = 30
+    datos[3] = 40
+    suma=0      
+	Para pos = 0 Hasta 3 Con Paso 1 Hacer
+        suma = suma + datos[pos]  
+    FinPara
+    Escribir "Los números ingresados son:"
+    Para pos = 0 Hasta 3 Con Paso 1 Hacer
+        Escribir "numero[", pos, "]: ", datos[pos]
+    FinPara
+    Escribir "La suma de los elementos es: ", suma
+FinFuncion
+
+//52. Promedio de calificaciones: Crea un arreglo de calificaciones 
+//(números decimales) y calcula el promedio de las calificaciones.
+Funcion promedioCalificaciones()
+    Definir datos, promedio como real
+	Definir pos Como Entero
+    Dimension datos[4]
+    datos[0] = 9.8
+    datos[1] = 7.4
+    datos[2] = 8.5
+    datos[3] = 9.1
+    suma=0  
+    Para pos=0 Hasta 3 Con Paso 1 Hacer
+        suma=suma+datos[pos]  
+    FinPara
+    Escribir "Los números ingresados son:"
+    Para pos=0 Hasta 3 Con Paso 1 Hacer
+        Escribir "numero[", pos, "]: ", datos[pos]
+    FinPara
+	promedio=suma/4
+	Escribir "El promedio del arreglo es: " promedio
+FinFuncion
+
+//53. Mayor y menor valor: Encuentra el valor máximo
+//y mínimo en un arreglo de números enteros.
+Funcion mayorMenorValor() 
+	Definir datos,pos, men , may Como Entero
+    Dimension datos[6]
+    datos[0] = 80
+    datos[1] = 75
+    datos[2] = 5
+    datos[3] = 9
+	datos[4] = 10
+	datos[5] = 20
+	may=0
+	men = datos[0] 
+	Para pos <- 0 Hasta 5 Con Paso 1 Hacer
+        Si datos[pos] > may Entonces
+            may = datos[pos] 
+        FinSi
+        Si datos[pos] < men Entonces
+            men = datos[pos] 
+        FinSi
+    FinPara
+	Escribir "Los números ingresados son:"
+    Para pos <- 0 Hasta 5 Con Paso 1 Hacer
+        Escribir "numero[", pos, "]: ", datos[pos]
+    FinPara
+    Escribir "El mayor numero del arreglo es: ", may
+    Escribir "El menor numero del arreglo es: ", men
+FinFuncion
+
+//54. Buscar un elemento: Pide al usuario que ingrese un número 
+//y verifica si ese número está presente en un arreglo dado.
+Funcion buscarElemento()
+	Definir datos,pos Como Entero
+    Dimension datos[10]
+    datos[0] = 8
+    datos[1] = 75
+    datos[2] = 5
+    datos[3] = 9
+	datos[4] = 10
+	datos[5] = 20
+	datos[6] = 12
+	datos[7] = 3
+	datos[8] = 18
+	datos[9] = 22
+	Escribir "Ingrese un numero"
+	Leer num
+	Para pos= 0 Hasta 9 Con Paso 1 Hacer
+		si num=datos[pos] Entonces
+			Escribir "El numero ingresado se encuentra en el arreglo"
+			Escribir "numero[", pos, "]: ", datos[pos]
+		FinSi
+	FinPara
+FinFuncion
+
+//55. Contar elementos pares: Cuenta cuántos números 
+//pares hay en un arreglo de números enteros.
+Funcion contarElementosPares()
+	Definir datos,pos Como Entero
+    Dimension datos[10]
+    datos[0] = 8
+    datos[1] = 7
+    datos[2] = 5
+    datos[3] = 9
+	datos[4] = 10
+	datos[5] = 20
+	datos[6] = 12
+	datos[7] = 3
+	datos[8] = 18
+	datos[9] = 22
+	Para pos= 0 Hasta 9 Con Paso 1 Hacer
+		pares=datos[pos] mod 2
+		Si pares=0 Entonces
+			Escribir "numero:[", pos , "]:", datos[pos]
+			c=c+1
+		FinSi
+	FinPara
+	Escribir "Los elementos pares del arreglo son os siguientes: " c
+FinFuncion
+
+//56. Inversión de un arreglo: Invierte el orden de los elementos 
+//en un arreglo. Por ejemplo, [1, 2, 3] se convierte en [3, 2, 1].
+Funcion invertirArreglo
+	Definir datos,pos Como Entero
+    Dimension datos[5]
+    datos[0] = 8
+    datos[1] = 75
+    datos[2] = 5
+    datos[3] = 9
+	datos[4] =11
+	Escribir "Arreglo principal:"
+	Para pos=0 Hasta 4 con paso de 1 Hacer
+		Escribir "numero[", pos, "]: ", datos[pos] 
+		pos=pos+1
+	FinPara
+	Escribir "Arreglo Invertido:"
+	Para pos= 4 Hasta 0 Con Paso -1 Hacer
+	Escribir "numero[", pos, "]: ", datos[pos]  
+	FinPara
+FinFuncion
+
+//57. Buscar el índice: Pide al usuario que ingrese un valor y encuentra el índice de ese 
+//valor en un arreglo. Si el valor aparece más de una vez, muestra todos los índices.
+Funcion buscarIndice()
+		Definir datos,pos Como Entero
+		Dimension datos[10]
+		datos[0] = 6
+		datos[1] = 5
+		datos[2] = 4
+		datos[3] = 1
+		datos[4] = 1
+		datos[5] = 2
+		datos[6] = 5
+		datos[7] = 3
+		datos[8] = 1
+		datos[9] = 4
+		Escribir "Ingrese un numero"
+		Leer num
+		Escribir "El numero ingresado se encuentra en el indice: "
+		Para pos= 0 Hasta 9 Con Paso 1 Hacer
+			si num=datos[pos] Entonces
+				Escribir "datos[", pos, "]: "
+			FinSi
+		FinPara
+FinFuncion
+Algoritmo AlgoritmosSecuenciales
+	//SumaDeDosNumeros()
+	//AreaDeUnTriangulo()
+	//NumeroParOimpar()
+	//CalculadoraSimple()
+	//TablaDeMultiplicar()
+	//CopiarPalabra()
+	//mayorDeTresNumeros()
+	//EdadParaVotar()
+	//CalculadoraDeIMC()
+	//PosiNegatCero()
+	//AñoBisiesto()
+	//SignoZodiacal()
+	//diaSemana()
+	//FrasesIguales() 
+	//CalculadoraPrecioConDescuento()
+	//CalculadoraFacturaImpuestos()  
+	//PrimeraOsegundaQuincena
+	//SueldoAumento()
+	//multiplesArticulos()
+	//ImpuestosSalario()
+	//DsctAntiguedad() 
+	//envioTarifas()
+	//dsctLealtadCliente()
+	//dsctVolumenCompra()
+	//CostoServicio()
+	//SumaNumerosPares()
+	//tablaMultiplicar() 
+	//contadorVocales()
+	//contadorDigitos()
+	//adivinaNumero()
+	//contadorAlfabeto()
+	//sumaImpares() 
+	//contadorDeCaracteres()
+	//sumaNumeros()
+	//cuentaRegresiva()
+	//sumaElementos()
+	//promedioCalificaciones()
+	//mayorMenorValor() 	
+	//buscarElemento()
+	//contarElementosPares()
+	//invertirArreglo()
+	//buscarIndice()
+FinAlgoritmo
+
