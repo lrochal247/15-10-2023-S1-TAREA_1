@@ -86,8 +86,8 @@ FinFuncion
 //15. Tabla de multiplicar: Pide al usuario un número 
 //y muestra su tabla de multiplicar del 1 al 10.
 //entrada:num                                                                                                                                     
-//proceso:Mientras i<=10
-//salida:result
+//proceso:Mientras i<=10 // result=num*i //i=i+1
+//salida:num "*" i "=" result
 Funcion TablaDeMultiplicar()
 	Definir num, i, result Como Entero
 	i=1; num=0
@@ -102,6 +102,9 @@ FinFuncion
 
 //16. Copiar palabra: Escribe un programa que lea dos 
 //palabras y concatena en otra variable las dos palabras
+//entrada:palabra1="" ; palabra2=""                                                                                                                                
+//proceso:palabraN=palabra1+palabra2
+//salida:palabraN
 Funcion CopiarPalabra()
 	Definir palabra1, palabra2, palabraN Como Caracter
 	palabra1="";palabra2="";palabraN=""
@@ -166,7 +169,7 @@ FinFuncion
 //a partir del peso y la altura del usuario, y luego indique si está en una categoría de peso saludable.
 Funcion CalculadoraDeIMC()
 	//Entrada: peso, altura
-	//Proceso: IMC=peso/altura
+	//Proceso: IMC=peso/(altura*altura)
 	//IMC
 	Definir peso, altura, imc Como Real
 	Escribir "Ingrese su peso en kg"
@@ -380,9 +383,9 @@ FinFuncion
 //el total de una factura y el porcentaje de impuestos aplicado. Luego, 
 //calcula y muestra el monto total a pagar, incluyendo los impuestos.
 Funcion CalculadoraFacturaImpuestos()
-	//Entrada:totalFactura, impApli
-	//Proceso:totalPagar=
-	//Salida:totalPagar
+	//Entrada:totalFactura, porcentajeImpuestos
+	//Proceso:montoTotalPagar = totalFactura + (totalFactura * (porcentajeImpuestos / 100))
+	//Salida:montoTotalPagar
 	Definir totalFactura,porImpuestos, montoTotalPagar Como Real
 	Escribir "Ingrese el total de la factura"
 	Leer totalFactura
@@ -437,29 +440,38 @@ FinFuncion
 
 //30. Calculadora de impuestos sobre el salario: Solicita al usuario que ingrese su 
 //salario anual y calcula el impuesto sobre la renta según las siguientes tasas:
+//Hasta $10,000: 5% 
+// De $10,001 a $20,000: 10%
+// Mas 20,000: 15% 
 Funcion ImpuestosSalario()
-	//Entrada:salarioAnual,
-	//Proceso:
-	//Salida:
+	//Entrada:salario
+	//Proceso:Si  salario <= 10000: impuesto = salario * 0.05//  
+        //Si salario>=10001 y salario <= 20000 :impuesto = salario * 0.10 // 
+        //Si salario>20000 Entonces impuesto = salario *0.15
+	//Salida:impuesto
 	Definir salario, imp Como Real
 	Escribir "Ingrese su salario anual"
 	Leer salario
 	Si salario <= 10000 Entonces
-		impuesto = salario * 0.10
+		impuesto = salario * 0.05
 	SiNo
-		Si salario <= 20000 Entonces
-			impuesto = salario * 0.15
-		FinSi
-	FinSi
+		Si salario>=10001 y salario <= 20000  Entonces
+			impuesto = salario * 0.10
+                SiNo
+                       Si salario>20000 Entonces
+                                impuesto = salario *0.15
+                       FinSi
+	        FinSi
+        FinSi
 	Escribir "El impuesto sobre la renta es: " impuesto
 FinFuncion
 
 //33. Descuento por antigüedad en la empresa: Pregunta al usuario cuántos años
 //ha estado trabajando en una empresa y calcula su bono de antigüedad. Si 
 //ha trabajado más de 5 años, otorga un bono del 5% sobre su salario.
-//Entrada:
-//Proceso:
-//Salida:
+//Entrada:años, salario
+//Proceso:Si años>5 : dsct=salario*0.05 bono=dsct
+//Salida:bono
 Funcion DsctAntiguedad() 
 	Definir años Como Entero
 	Definir salario, dsct, bono como real
@@ -477,6 +489,9 @@ FinFuncion
 //34. Calculadora de envío con tarifas diferentes: Crea un programa que permita al usuario
 //ingresar la distancia de envío y calcule el costo del envío. Si la distancia es inferior 
 //a 50 km, el costo es de $10. Si la distancia es de 50 km o más, el costo es de $20.
+//Entrada:dist
+//Proceso:Si dist<50:costo=10 //si dist>=50 : costo=20
+//Salida:bono
 Funcion envioTarifas()
 	Escribir "Ingrese la distancia de envio"
 	Leer dist
@@ -493,6 +508,9 @@ FinFuncion
 //35. Calculadora de descuento por lealtad del cliente: Pide al usuario que 
 //ingrese el total de sus compras mensuales durante un año. Si el total es 
 //superior a $500, aplica un descuento del 10% en la próxima compra.
+//Entrada:total
+//Proceso:Si total>500:dsct=compra-(compra*0.10)
+//Salida:dsct
 Funcion dsctLealtadCliente()
 	Escribir "Ingrese el total de sus compras mensuales durante un año" 
 	Leer total
@@ -514,6 +532,11 @@ FinFuncion
 //10-50 unidades: 5% de descuento
 //51-100 unidades: 10% de descuento
 //Más de 100 unidades: 15% de descuento
+//Entrada:cant=0; precioUni=0.0
+//Proceso:total=precioUni*cant Si cant>=10 y cant<=50:
+		dsct=0.05
+		totaldsct=total-(total*dsct)
+//Salida:totaldsct
 Funcion dsctVolumenCompra()
 	Definir cant Como Entero
 	Definir precioUni como real
@@ -545,6 +568,9 @@ FinFuncion
 
 //40. Calculadora de costo de servicio: Pregunta al usuario cuántas horas de servicio 
 //necesita y calcula el costo total. Si las horas son más de 10, aplica un descuento del 20%.
+//Entrada:horasS=0; costoS=0.0
+//Proceso:total=costoS*horasS// Si horasS>10: dsct=total-(total*0.20)
+//Salida:total; dsct
 funcion CostoServicio() 
 	Definir costoS Como Real
 	Escribir "Ingrese la cantidad de horas de servicio que necesita"
@@ -563,6 +589,12 @@ FinFuncion
 //Ciclos - For y while
 //41. Suma de números pares: Utiliza un bucle for para 
 //calcular la suma de los números pares del 1 al 50.
+//Entrada:n=1
+//Proceso:Para i=n Hasta 50 Con Paso 1 Hacer//rec = n mod 2 
+//Si rec=0:
+//Escribir n
+//suma=suma+n
+//Salida:suma
 Funcion SumaNumerosPares()
 	Definir n, suma Como Entero
 	n=1
@@ -579,6 +611,10 @@ FinFuncion
 
 //42. Tabla de multiplicar: Utiliza un bucle for para imprimir la tabla de 
 //multiplicar de un número ingresado por el usuario del 1 al 12
+//Entrada:num=0
+//Proceso:Para i=1 Hasta 12 Con Paso 1 Hacer 
+//multi=num*i
+//Salida:Escribir num " * " i "  = " multi
 Funcion tablaMultiplicar() 
 	Definir num, i, multi como entero
 	Escribir "Ingrese el numero"
@@ -592,6 +628,12 @@ FinFuncion
 
 //43. Contador de vocales: Utiliza un bucle while para contar el
 //número de vocales en una palabra ingresada por el usuario.
+//Entrada:palabra=""
+//Proceso:Para i=0 Hasta long Con Paso 1 Hacer 
+//car = Subcadena(palabra, i, i)
+//Si car="a" o car="e" o car="i" o car="o" o car="u" entonces
+//cont=cont+1
+//Salida:vocales
 Funcion contadorVocales()
 	Definir palabra, car Como Caracter
 	Definir i como entero
@@ -610,6 +652,12 @@ FinFuncion
 
 //44.Contador de digitos: Utiliza un bucle for para contar el 
 //numero de dígitos en una palabra ingresada por el usuario.
+//Entrada:palabra=""
+//Proceso:Para i=0 Hasta long Con Paso 1 Hacer 
+//Para i <- 0 Hasta Longitud(palabra) - 1 Con Paso 1 Hacer
+//car= Subcadena(palabra, i, i)
+//cont = cont + 1
+//Salida:cont
 Funcion contadorDigitos()
 	Definir palabra Como Caracter
 	Escribir "Ingrese una palabra"
@@ -624,9 +672,14 @@ FinFuncion
 //45. Adivina el número: Genera un número aleatorio y pide al usuario 
 //que adivine el número. Utiliza un bucle while para repetir la 
 //solicitud hasta que adivine correctamente.
+//Entrada:numAd
+//Proceso:intento=1//Mientras numAd<>n Hacer //intento=intento+1
+//Escribir "Adivine el numero nuevamente  # " intento
+//Leer numAd
+//Salida:Si n=numAd : Ganastes
 Funcion adivinaNumero()
 	Definir numAd, intento, n Como entero
-	n=azar(3)
+	n=azar(10)
 	Escribir "Adivine el numero"
 	Leer numAd
 	intento=1
@@ -642,6 +695,10 @@ FinFuncion
 
 //46. Contador de Alfabeto: Utiliza un bucle for para contar el número 
 //de letras del alfabeto(a..z) en una palabra ingresada por el usuario.
+//Entrada:palabra=""; cont=0
+//Proceso:    Para i <- 1 Hasta Longitud(palabra) Hacer // letra <- Subcadena(palabra, i, i)
+//Si letra >= "a" Y letra <= "z" :cont<- cont + 1
+//Salida:cont
 Funcion contadorAlfabeto()
 	Definir palabra Como Caracter
     Definir cont Como Entero
@@ -659,6 +716,9 @@ FinFuncion
 
 //47. Suma de números impares: Utiliza un bucle while para 
 //calcular la suma de los números impares del 1 al 100.
+//Entrada:n=1
+//Proceso:Mientras n>100: rec=n mod 2 //Si rec=1: impares=impares+1 //n=n+1
+//Salida:impares
 Funcion sumaImpares() 
 	Definir impares Como Entero
 	n=1
@@ -675,6 +735,9 @@ FinFuncion
 
 //48. Contador de caracteres: Escribir un programa que lea una
 //palabra y presenta cuantos caracteres hay en dicha palabra.
+//Entrada:palabra=""; cont=0
+//Proceso:cont=longitud(palabra)
+//Salida:cont
 Funcion contadorDeCaracteres()
     Definir palabra Como Caracter
     Definir cont Como Entero
@@ -687,6 +750,9 @@ FinFuncion
 //49. Suma de números: Pide al usuario que ingrese números enteros positivos 
 //uno por uno y utiliza un bucle while para calcular la suma de estos números.
 //El ciclo debe terminar cuando el usuario ingrese un número negativo.
+//Entrada:num=1; suma=0(calcular)
+//Proceso:Mientras num>0: Leer num, Si num>0: suma=suma+num
+//Salida:suma
 Funcion sumaNumeros()
 	Definir num, suma Como Entero
 	Escribir "Ingrese numeros enteros positivos (termina cuando ingrese un numero negativo)"
@@ -702,6 +768,9 @@ FinFuncion
 
 //50.Cuenta regresiva: Pide al usuario que ingrese un número entero positivo y utiliza
 //un bucle while para mostrar una cuenta regresiva desde ese número hasta 1.
+//Entrada:num=0
+//Proceso:Mientras num>0: num=num-1, Si num>0 :Escribir num
+//Salida:num
 Funcion cuentaRegresiva()
 	Escribir "Ingrese un numero entero positivo"
 	Leer num
@@ -716,6 +785,9 @@ FinFuncion
 //Arreglos 
 //51.Suma de elementos: Crea un arreglo de números 
 //enteros y calcula la suma de todos sus elementos.
+//Entrada:datosArreglo
+//Proceso:Para pos = 0 Hasta 3 Con Paso 1: suma = suma + datos[pos]  
+//Salida:suma
 Funcion sumaElementos()
     Definir datos, pos Como Entero
     Dimension datos[4]
@@ -736,6 +808,10 @@ FinFuncion
 
 //52. Promedio de calificaciones: Crea un arreglo de calificaciones 
 //(números decimales) y calcula el promedio de las calificaciones.
+//Entrada:datosArreglo
+//Proceso:Para pos = 0 Hasta 3 Con Paso 1: suma = suma + datos[pos]  
+//promedio=suma/4 
+//Salida:promedio
 Funcion promedioCalificaciones()
     Definir datos, promedio como real
 	Definir pos Como Entero
@@ -758,6 +834,10 @@ FinFuncion
 
 //53. Mayor y menor valor: Encuentra el valor máximo
 //y mínimo en un arreglo de números enteros.
+//Entrada:datosArreglo
+//Proceso:Para pos <- 0 Hasta 5 Con Paso 1: Si datos[pos] > may: may = datos[pos] 
+//Si datos[pos] < men: men = datos[pos] 
+//Salida:may/men
 Funcion mayorMenorValor() 
 	Definir datos,pos, men , may Como Entero
     Dimension datos[6]
@@ -787,6 +867,9 @@ FinFuncion
 
 //54. Buscar un elemento: Pide al usuario que ingrese un número 
 //y verifica si ese número está presente en un arreglo dado.
+//Entrada:datosArreglo
+//Proceso:Para pos= 0 Hasta 9 Con Paso 1 : si num=datos[pos] Entonces
+//Salida:Escribir"Si esta en el arreglo"
 Funcion buscarElemento()
 	Definir datos,pos Como Entero
     Dimension datos[10]
@@ -812,6 +895,9 @@ FinFuncion
 
 //55. Contar elementos pares: Cuenta cuántos números 
 //pares hay en un arreglo de números enteros.
+//Entrada:datosArreglo
+//Proceso:Si pares=0: datos[pos]// c=c+1
+//Salida:Escribir c
 Funcion contarElementosPares()
 	Definir datos,pos Como Entero
     Dimension datos[10]
@@ -837,6 +923,9 @@ FinFuncion
 
 //56. Inversión de un arreglo: Invierte el orden de los elementos 
 //en un arreglo. Por ejemplo, [1, 2, 3] se convierte en [3, 2, 1].
+//Entrada:datosArreglo
+//Proceso:ParaPara pos= 4 Hasta 0 Con Paso -1 Hacer
+//Salida:Escribir datos[pos]
 Funcion invertirArreglo
 	Definir datos,pos Como Entero
     Dimension datos[5]
@@ -858,6 +947,9 @@ FinFuncion
 
 //57. Buscar el índice: Pide al usuario que ingrese un valor y encuentra el índice de ese 
 //valor en un arreglo. Si el valor aparece más de una vez, muestra todos los índices.
+//Entrada:datosArreglo
+//Proceso:Para pos= 0 Hasta 9 Con Paso 1: si num=datos[pos] Entonces
+//Salida:Escribir datos[pos]
 Funcion buscarIndice()
 		Definir datos,pos Como Entero
 		Dimension datos[10]
