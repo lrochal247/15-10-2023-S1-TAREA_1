@@ -1,0 +1,185 @@
+//1. Dado a=3 y b=7, encuentra el valor de y = 2 * a + b - a mod 3.
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 1
+//a=3 
+//b=7
+//2 * a + b - a mod 3.
+//2 * 3 + 7 - 3 mod 3
+//  6  +  7 - 3 mod 3
+//  6 + 7 - 0
+// 13
+Funcion Expresion1() 
+	Definir a, b, r Como Entero
+	a=3; b=7
+	Escribir 2 * a + b - a mod 3
+FinFuncion
+
+//2. Si a=10 y b=4, calcula el valor de z = a * b + 3 mod a + b.
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion2 
+//a=10
+//b=4
+// a * b + 3 mod a + b
+//10 * 4 + 3 mod 10 + 4
+//40 + 3 mod 10 + 4
+//40 + 3 mod 10 + 4
+//40 +    3   + 4
+// 47
+Funcion Expresion2()
+	DEfinir a, b, z como real
+	a=10
+	b=4
+	z = a * b + 3 mod a + b
+	Escribir z
+FinFuncion
+
+//3. Con a=6 y b=2, determina el valor de 
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 3
+//a=6
+//b=2
+//a - b + 2 * a mod b
+//6 - 2 + 2 * 6 mod 2
+//6 - 2 + 2 * 0
+//6 - 2 +   0
+//  4 
+Funcion Expresion3()
+	Definir a, b , w Como Entero
+	a=6; b=2
+	w = a - b + 2 * a mod b
+	Escribir w
+FinFuncion
+
+//4. Para a=8 y b=5, encuentra el valor de v = 2 * b + a div 2 + 4 * b mod a.
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 4
+//a=8
+//b=5
+//2 * b + a div 2 + 4 * b mod a.
+//2 * 5 + 8 div 2 + 4 * 5 mod 8
+// 10  + 8 div 2 + 4 * 5 mod 8
+// 10  +  4 + 4 * 5 mod 8
+// 10  +  4 +  20 mod 8
+// 10  +  4 + 4 
+//18
+Funcion EExpresion4()
+	Definir a, b, v Como Entero
+	a=8
+	b=5
+	v = 2 * b + a / 2 + 4 * b mod a
+	Escribir v
+FinFuncion
+
+//5. Si a=12 y b=9, calcula el valor de u = b - a + 3 * a mod b.
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 5
+//a=12
+//b=9
+// b - a + 3 * a mod b
+// 9 - 12 + 3 * 12 mod 9
+// 9 - 12 + 36 mod 9
+// 9 - 12 + 0
+// -3
+Funcion Expresion5()
+	Definir a, b , u Como Entero
+	a=12
+	b=9
+	u = b - a + 3 * a mod b
+	Escribir u 
+FinFuncion
+
+//6. (5 + 3 * 2) + 9 > 3 * 5 * 14 % 3.
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 6
+//(5 + 3 * 2) + 9 > 3 * 5 * 14 % 3
+//(5 + 6) + 9 > 3 * 5  * 14 % 3
+// 11 + 9 > 3 * 5 * 14 % 3
+// 11 + 9 > 15 * 14 % 3
+//11 + 9 > 210 % 3
+//11 + 9 > 0
+//20 > 0
+// verdadero
+Funcion Expresion6()
+	Definir result Como logico
+	result=(5 + 3 * 2) + 9 > 3 * 5 * 14 % 3
+	Escribir result
+FinFuncion
+
+//7. 2 *(4 - 10 + 8)/2* 36 *(1/2)
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 7
+//2 *(4 - 10 + 8)/2 * 36 *(1/2)
+//2 *(-6 + 8)/2 * 36 * (1/2)
+//2 * 2/2 * 36 * (1/2)
+//2 * 2 / 2 * 36 * 0.5
+// 4/2 * 36 * 0.5
+// 2 * 36 * 0.5
+//72 * 0.5
+// 36
+Funcion Expresion7()
+	Definir result Como entero
+	result=2 *(4 - 10 + 8)/2* 36 *(1/2)
+	Escribir result
+FinFuncion
+
+//8. 260 / 12 + 54 % 3 - 85 % 7
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 8
+//260 / 12 + 54 % 3 - 85 % 7
+//21,6 + 54 % 3 - 85 % 7
+//21.6 + 0 - 85 % 7
+//21.6 - 1
+//20.6
+Funcion Expresion8()
+	Definir result Como real
+	result= 260 / 12 + 54 % 3 - 85 % 7
+	Escribir result
+FinFuncion
+
+//9.(48 < 2 * 3) (2 * 7 < 12)
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 9
+//(48 < 2 * 3) | | (2 * 7 < 12)
+//(48 < 6 ) | | (14 < 12)
+// falso   | | falso
+//falso
+Funcion Expresion9()
+	Definir result Como logico
+	result=(48 < 2 * 3) o (2 * 7 < 12)
+	Escribir result
+FinFuncion
+
+//10. ((8 > 2) | | (932 < 23) ) && 4 == 2
+//1) orden de procedencia (), ^ **, *, / mod div, +, -
+//del mismo nivel se resuelve de izquierda a derecha
+//Ejercicio1 expresion 10
+//((8 > 2) | | (932 < 23) ) && 4 == 2
+// ( v | | f ) && f
+//     v  && f
+//      falso
+Funcion Expresion10()
+	Definir result Como logico
+	result=((8 > 2) o (932 < 23) ) y 4 == 2
+	Escribir result
+FinFuncion
+Algoritmo expresionesMatemáticas
+	//Expresion1()
+	//Expresion2()
+	//Expresion3()
+	//Expresion4()
+	//Expresion5()
+	//Expresion6()
+	//Expresion7()
+	//Expresion8()
+	//Expresion9()
+	//Expresion10()
+FinAlgoritmo
