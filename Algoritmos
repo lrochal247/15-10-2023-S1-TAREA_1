@@ -18,6 +18,9 @@ FinFuncion
 
 //12. Área de un triángulo: Pide al usuario que ingrese la base 
 //y la altura de un triángulo, luego calcula y muestra su área.
+//entrada:base, altura 
+//proceso:area=(base*altura)/2
+//salida:area
 Funcion AreaDeUnTriangulo()
 	Definir base, altura, area Como Real
 	Escribir "Ingrese la base "
@@ -30,6 +33,9 @@ FinFuncion
 
 //13. Número par o impar: Solicita al usuario que 
 //ingrese un número e indica si es par o impar.
+//entrada:num
+//proceso:rec=num mod 2 //rec=0 par , rec= impar
+//salida: par/impar
 Funcion NumeroParOimpar()
 	Definir num, rec Como Entero
 	num=0; rec=0
@@ -48,6 +54,9 @@ FinFuncion
 //14.Calculadora simple: Crea una calculadora que realice operaciones básicas 
 //como suma, resta, multiplicación y división, según la elección del usuario.
 Funcion CalculadoraSimple()
+//entrada:num1, num2, op                                                                                                                                        
+//proceso:result=num1 op num2
+//salida:result
 	Definir num1, num2 Como Entero
 	Definir result como real
 	Escribir "Ingresa el primer numero a calcular"
@@ -76,8 +85,10 @@ FinFuncion
 
 //15. Tabla de multiplicar: Pide al usuario un número 
 //y muestra su tabla de multiplicar del 1 al 10.
+//entrada:num                                                                                                                                     
+//proceso:Mientras i<=10
+//salida:result
 Funcion TablaDeMultiplicar()
-	Escribir "*** ***"
 	Definir num, i, result Como Entero
 	i=1; num=0
 	Escribir "Ingrese el numero de la tabla"
