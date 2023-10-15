@@ -1,0 +1,132 @@
+Funcion variables()
+	Definir colorr como caracter  
+	colorr = "verde"
+	Escribir colorr
+	Definir edadd como entero
+	edad=55
+	Escribir edad
+	DEfinir activo Como Logico
+	activo=Verdadero
+	Escribir activo
+FinFuncion
+
+Funcion edads()
+	Definir edad Como Entero
+	Escribir "Que edad tienes"
+	Leer edadUsuario
+	Escribir edadUsuario , "años"
+FinFuncion
+
+Funcion suma
+	Definir num1, num2 Como Entero
+	Escribir "Ingrese numero 1"
+	Leer num1
+	escribir "Ingrese numero 2"
+	Leer num2
+	resultado<-num1+num2
+	Escribir "El resultado es : " resultado
+FinFuncion
+
+Funcion mayorMenorEdad()
+	Definir edad Como Entero
+	edad =19
+	Si edad>=18 Entonces
+		Escribir "Eres mayor edad"
+	SiNo
+		Escribir "Eres menor edad"
+	FinSi
+FinFuncion
+
+Funcion sedchocolate()
+	sed="si"
+	dinero="no"
+	Si sed="si" y dinero="si" Entonces
+		Escribir "Compra una botella de agua"
+	SiNo
+		si sed="no" y dinero="si" Entonces
+			Escribir "compra un chocolate"
+		SiNo
+			Escribir "No tienes dinero, ve para la casa"
+		FinSi
+	FinSi
+FinFuncion
+
+Funcion adivinarNumero()
+	Definir numAleatorio Como Entero
+	numAleatorio=aleatorio(0,10)
+	intentos=3
+	Mientras intentos>0 Hacer
+		Escribir "Ingresa un numero de 0 a 10"
+		Leer numUsuario
+		Si numAleatorio=numUsuario Entonces
+			Escribir "Guau eres genial, es correcto. El numero es: " numAleatorio
+			intentos=0
+		SiNo
+			intentos=intentos-1
+			Escribir "Perdedor, te quedan " intentos " intentos"
+		FinSi
+	FinMientras
+	Si intentos=0 Entonces
+		Escribir "Ya no te quedan intentos el numero a adivinar era " numAleatorio
+	sino 
+		Escribir "Ganastes"
+	FinSi
+FinFuncion
+
+Funcion combos()
+	Escribir "Que combo desea?"
+	Escribir "1: combo 1"
+	Escribir "2: combo 2"
+	Escribir "3: combo 3"
+	Definir combo Como Entero
+	Leer combo
+	Segun combo hacer
+		1:
+			Escribir "El valor es de $3.50"
+		2:
+			Escribir "El valor es de $5,00"
+		3:
+			Escribir "El valor es de $8.00"
+		De otro modo:
+			Escribir "No tenemos lo que buscas"
+	FinSegun
+FinFuncion
+
+Funcion rrepetir()
+	Definir num Como Entero
+	Definir respuesta Como Caracter
+	Repetir
+		num=Aleatorio(0,10)
+		Escribir "El numero aleatorio es:" num
+		Escribir "Desea otro numero"
+		Leer respuesta
+	Hasta Que respuesta="no"	
+FinFuncion
+
+Funcion arreglosFor()
+	Dimension personas[3]
+	personas[0]="Ignacio"
+	personas[1]="Victor"
+	personas[2]="Juanito"
+	Para i=0 Hasta 2 con paso 1 Hacer
+		Escribir "El nombre de mi arreglo es: " personas[i]
+	FinPara
+FinFuncion
+
+Funcion Sumar(dato1,dato2)
+	Escribir "El resultado es: " dato1+dato2
+FinFuncion
+Algoritmo video
+	//variables()
+	//edads()
+	//suma()
+	//mayorMenorEdad()
+	//sedchocolate()
+	//adivinarNumero()
+	//combos()
+	//rrepetir()
+	//arreglosFor()
+	leer dato1
+	leer dato2
+	Sumar(dato1,dato2)
+FinAlgoritmo
