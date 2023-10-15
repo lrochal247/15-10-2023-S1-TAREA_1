@@ -869,7 +869,7 @@ Funcion buscarIndice()
 			FinSi
 		FinPara
 FinFuncion
-Algoritmo AlgoritmosSecuenciales
+Algoritmo ejerciciosAlgoritmos
 	//SumaDeDosNumeros()
 	//AreaDeUnTriangulo()
 	//NumeroParOimpar()
@@ -914,3 +914,120 @@ Algoritmo AlgoritmosSecuenciales
 	//buscarIndice()
 FinAlgoritmo
 
+Funciones
+
+//58. Función sin parámetros para saludar.
+Funcion saludar() 
+	Escribir "¡Hola! Bienvenido al programa"
+FinFuncion
+Algoritmo ejerciciosAlgoritmo
+//saludar()
+finAlgoritmo
+
+//59. Función con parámetros para sumar dos números.
+Funcion sumaParametros  (num1, num2, suma)
+	suma=num1+num2
+	Escribir num1 "+" num2 "=" suma
+FinFuncion
+Algoritmo ejerciciosAlgoritmo
+//saludar()
+finAlgoritmo
+
+//60. Función con return para multiplicar dos números.
+Funcion multiNumeros(num1,num2,multi)
+	multi=a*b
+	Escribir num1 "*" num2 "=" multi
+FinFuncion
+
+//61. Función sin return para determinar si un número es par o impar.
+Funcion parEimpar(num1,rec) 
+	rec=num1 mod 2
+	Si rec=0 Entonces
+		Escribir "El numero " num1 " es par"
+	SiNo
+		Escribir "El numero " num1 " es impar"
+	FinSi
+FinFuncion
+
+//62. Función con parámetros y return
+//para calcular el área de un rectángulo.
+Funcion areaRectangulo(num1,num2)
+	base=num1
+	altura=num2
+	area=base*altura
+	Escribir "El area del rectangulo es: " area "(cm, m, km)^2 "
+FinFuncion
+Algoritmo ejerciciosAlgoritmo
+	Escribir"Ingrese el primero numero"
+	Leer num1
+	Escribir "Ingrese el segundo numero"
+	Leer num2
+	//sumaParametros(num1,num2,suma)
+	//multiNumeros(num1,num2,multi)
+	//parEimpar(num1,rec)
+	//areaRectangulo(num1,num2)
+
+//63. Función sin parámetros para imprimir tu nombre.
+Funcion impNombre()
+	Escribir "Mi nombre es Laddy."
+FinFuncion
+Algoritmo ejerciciosAlgoritmos
+//impNombre()	
+FinAlgoritmo
+
+//64. Función con return para convertir grados Celsius a Fahrenheit.
+Funcion celsAfahrenheit(celsius,fahrenheit)
+	fahrenheit = (celsius * 1.8) + 32
+	Escribir "La temperatura en grados Fahrenheit es: ", fahrenheit
+FinFuncion
+Algoritmo ejerciciosAlgoritmos
+Escribir "Ingrese la temperatura en grados Celsius: "
+Leer celsius
+celsAfahrenheit(Celsius)
+FinAlgoritmo
+
+//65. Función con parámetros para contar un carácter en una frase.
+Funcion contarCaracter(frase) 
+	Para i <- 0 Hasta Longitud(frase) - 1 Con Paso 1 Hacer
+        car= Subcadena(palabra, i, i)
+		cont = cont + 1
+    FinPara
+	Escribir "tiene " cont " caracteres"
+FinFuncion
+Algoritmo ejerciciosAlgoritmos
+Escribir "Los números del 1 al 10 son:"
+imprimirNumeros()
+FinAlgoritmo
+
+//66. Función sin return para imprimir números del 1 al 10.
+Funcion imprimirNumeros()
+    Para num <- 1 Hasta 10 Hacer
+        Escribir num
+    FinPara
+FinFuncion
+Algoritmo ejerciciosAlgoritmos
+Escribir "Ingrese una frase"
+Leer frase
+contarCaracter(frase)
+FinAlgoritmo
+
+//67. Función con parámetros y return para sumar una lista de números.
+Funcion sumarListaNumeros(num)
+    Definir suma Como Real
+    suma <- 0 
+	Para pos = 0 Hasta 4 Con Paso 1 Hacer
+        suma = suma + num[pos]  
+    FinPara
+   Escribir suma
+FinFuncion
+Algoritmo ejerciciosAlgoritmos
+Dimension num[5] 
+num[0] = 10
+num[1] = 5
+num[2] = 8
+num[3] = 3
+num[4] =12
+resultado =suma
+Escribir "La suma de los números en la lista es: ", resultado
+sumarListaNumeros(num)
+FinAlgoritmo
